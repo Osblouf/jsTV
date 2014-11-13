@@ -1,3 +1,5 @@
 # Exclude everything in Images and in Videos
 /Images/*
+!/Images/.infos.txt
 /Videos/*
+!/Videos/.infos.txt
