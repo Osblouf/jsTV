@@ -1,0 +1,43 @@
+<!Doctype>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Remote</title>
+</head>
+<body>
+	<p>Ceci est le programme de la télécommande.</p>
+	<p>Le dernier message envoyé est :</p>
+	<p id="last"></p>
+	<p id="connect"></p>
+
+	<script src="http://10.42.0.1:8080/socket.io/socket.io.js"></script>
+	<script src="http://10.42.0.1:8080/quo.js"></script>
+	<script>
+		var socket = io.connect('http://10.42.0.1:8080');
+		socket.on('connect', function(data)
+		{
+			socket.emit('remote', 'ready');
+			document.getElementById("last").textContent="ready";});
+		});
+		socket.on('tv', function(data){
+			if(data == 'ok'){
+				document.getElementById("connect").textContent="L écran est connecté.";}
+		});
+		socket.on('screen_disconnected', function(){
+			document.getElementById("connect").textContent="L écran est déconnecté.\";});
+		
+		$$('body').swipeLeft(function(){
+			socket.emit('remote', 'left');
+			document.getElementById("last").textContent="left";});
+		$$('body').swipeRight(function(){
+			socket.emit('remote', 'right');
+			document.getElementById("last").textContent="right";});
+		$$('body').swipeUp(function(){
+			socket.emit('remote', 'up');
+			document.getElementById("last").textContent="up";});
+		$$('body').swipeDown(function(){
+			socket.emit('remote', 'down');
+			document.getElementById("last").textContent="down";});
+	</script>
+</body>
+</html>
