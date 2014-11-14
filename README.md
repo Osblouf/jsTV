@@ -1,9 +1,9 @@
 jsTV
 ====
 
-A simple smart TV for the raspberry Pi
+A simple smart TV for raspberry Pi
 
-To run :
+Run it :
 
 	clone https://github.com/Osblouf/jsTV
 
@@ -15,4 +15,4 @@ To run :
 
 	nodejs server.js
 
-That's all !
+That's all folks !
