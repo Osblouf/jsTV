@@ -1,0 +1,51 @@
+body
+{
+	background: url('images/fondecran.jpg') no-repeat;
+	margin:auto;
+}
+
+h1
+{
+	font-size:xx-large;
+	color:white;
+	margin-left:700px;
+	font-style:italic;
+	
+}
+h2
+{
+	font-size:large;
+	color:black;
+
+}
+
+h3
+{
+	font-size:small;
+	color: black;
+}
+
+ul
+{
+	display: inline-block;
+	list-style-type: none;
+}
+
+ul li[span]
+{
+	display: inline-block; 
+	margin: 30px; 	
+	list-style-type: none;
+}
+
+ol li 
+{
+	list-style-type: none;
+	text-align: left;
+}
+
+#liste_logos
+{
+	margin-left: 300px;
+	margin-top : 300px;
+}
