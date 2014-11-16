@@ -22,7 +22,7 @@
     <![endif]-->
 
 	<script>
-		var MAX = 3;
+		var MAX = 1;
 		var MIN = 0;
 		var id_value = MIN;
 		var back_unselected = '#FFFFFF';
@@ -34,6 +34,17 @@
 			// Récupère les valeurs des arrières plans des DIV
 			back_unselected = document.getElementById(id_value).style.backgroundColor;
 			first = true;		
+		}
+
+		function startScreen()
+		{
+			
+			if(!first)
+				init();
+
+			document.getElementById(id_value).style.backgroundColor=back_selected;
+			document.getElementById("preview").style.visibility = 'hidden';
+			
 		}
 
 		function swiftLeft()
@@ -50,6 +61,7 @@
 				id_value = MAX;
 
 			document.getElementById(id_value).style.backgroundColor=back_selected;
+			updatePreview();		
 		}
 
 		function swiftRight()
@@ -70,16 +82,51 @@
 			document.getElementById(id_value).style.backgroundColor=back_selected;
 			// setting up Big Illustration
 			str = "img_"+id_value;
+			updatePreview();
 			selectElement(str);		
 		}
 
+		// On double Tap
 		function accessSubMenu()
 		{
-			console.log("Double Tap");
-			var str = "menu/"+id_value+".htm";
-			console.log(str);
-			window.location.assign(str);
+			// Here we play the movie !
+			console.log("To be implemented");
+			// var str = "./backscreen_player.htm";
+			// console.log(str);
+			//window.location.assign(str);
+		}
+
+		function updatePreview()
+		{
+			/*
 			
+
+  var newdiv = document.createElement('div');
+
+  var divIdName = 'my'+num+'Div';
+
+  newdiv.setAttribute('id',divIdName);
+
+  newdiv.innerHTML = 'Element Number '+num+' has been added! <a href=\'#\' onclick=\'removeElement('+divIdName+')\'>Remove the div "'+divIdName+'"</a>';
+
+  ni.appendChild(newdiv);
+*/
+
+			var str = "img_"+id_value;
+			var elm;
+			var elms = document.getElementById(id_value).getElementsByTagName("*");
+			for(var i=0;i<elms.length;i++)
+			{
+				if (elms[i].id === str) {
+            				elm = elms[i];
+            				break;
+        			}
+			}
+
+			// setting up new image value
+			// document.getElementById('myImageId');
+			document.getElementById("preview").style.visibility = "visible";
+			document.getElementById("preview").src = elm.src;
 		}
 		
 		function selectElement(str)
@@ -105,5 +152,54 @@
 		<span class="demo-heading-note"><font color='#ecf0f1'>Pictures</font></span>
 	</h1>
 </div>
+
+<div class="demo-illustrations">
+	<div class="demo-content">
+	</div>
+</div>
+
+<div class="col-xs-2">
+</div>
+<div class="col-xs-2">
+</div>
+<div class="col-xs-3" id="preview_div">
+		 <img id="preview" height="342" width="242" src="../images/back_movie_screen.png">
+</div>
+<div class="row demo-row">
+</div>
+<div class="row demo-row">
+<div class="demo-illustrations" >
+	<div class="demo-content">
+		<div >
+		</div>
+		<div >
+		</div>
+		<div >
+		</div>
+		<div id=0 align="right">
+			<img src="../images/the_hobbit.jpg" alt="the hobbit" id="img_0"/>
+		</div>
+		<div id=1 align="right">
+			<img src="../images/interstellar.jpg" alt="interstellar" id="img_1"/>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="row demo-row">
+	<div class="col-xs-3">
+		<a class="btn btn-block btn-lg btn-primary" href="#fakelink" onclick="swiftLeft()">Swift Left</a>
+	</div>
+	<div class="col-xs-3">
+		<a class="btn btn-block btn-lg btn-primary" href="#fakelink" onclick="swiftRight()">Swift Right</a>
+	</div>
+	<div class="col-xs-3">
+		<a class="btn btn-block btn-lg btn-primary" href="#fakelink" onclick="accessSubMenu()">Double Tap</a>
+	</div>
+	</div>
+</div>
 </body>
+
+<script>
+	window.onload = startScreen();
 </html>
