@@ -28,6 +28,7 @@
 		var back_unselected = '#FFFFFF';
 		var back_selected = '#16a085';
 		var first = false;
+		var prev_text = false;
 
 		function init()
 		{
@@ -98,20 +99,6 @@
 
 		function updatePreview()
 		{
-			/*
-			
-
-  var newdiv = document.createElement('div');
-
-  var divIdName = 'my'+num+'Div';
-
-  newdiv.setAttribute('id',divIdName);
-
-  newdiv.innerHTML = 'Element Number '+num+' has been added! <a href=\'#\' onclick=\'removeElement('+divIdName+')\'>Remove the div "'+divIdName+'"</a>';
-
-  ni.appendChild(newdiv);
-*/
-
 			var str = "img_"+id_value;
 			var elm;
 			var elms = document.getElementById(id_value).getElementsByTagName("*");
@@ -127,6 +114,30 @@
 			// document.getElementById('myImageId');
 			document.getElementById("preview").style.visibility = "visible";
 			document.getElementById("preview").src = elm.src;
+			// This parts fills in the synapsis
+			var syn = document.getElementById("preview_text");
+			var nElm;			
+			if(!prev_text){
+				nElm = document.createElement('small');
+				nElm.setAttribute('id',"synopsis");
+				syn.style.backgroundColor = '#7f8c8d';
+				syn.style.filter="alpha(opacity=65)";
+				syn.style.MozOpacity   = "0.65";
+				syn.style.opacity      = "0.65";
+				syn.style.KhtmlOpacity = "0.65";
+			}
+			else
+			{
+				nElm = document.getElementById("synopsis");
+			}			
+			
+			nElm.innerHTML = '<span class="demo-text-note">This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.This is the Preview.</span>';
+			
+			if(!prev_text)
+			{
+				syn.appendChild(nElm);
+				prev_text = true;			
+			}
 		}
 		
 		function selectElement(str)
@@ -164,6 +175,8 @@
 </div>
 <div class="col-xs-3" id="preview_div">
 		 <img id="preview" height="342" width="242" src="../images/back_movie_screen.png">
+</div>
+<div class="col-xs-3" id="preview_text">
 </div>
 <div class="row demo-row">
 </div>
