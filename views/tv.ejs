@@ -3,14 +3,68 @@
 <head>
 	<meta charset="utf-8" />
 	<title>TV</title>
+	<style>
+		.sel_film{
+			color: #000000;
+		}
+		.sel_image{
+			color: #000000;
+		}
+		.sel_jeu{
+			color: #000000;
+		}
+		.menu{
+			color: #000000;
+		}
+		.menu_selec{
+			color: #0000FF;
+		}
+		body{
+			background-color: lightblue;
+			color: #FF0000;
+		{
+	</style>
 </head>
 <body>
-	<p>Ceci est le programme de la télé.</p>
+	<h1>jsTV - Sisi Ataman t'as vu toi même tu sais tkt c'est vrai...</h1>
+	<div>
+		<div id="menu_1" class="menu_selec">
+			<h2>Films</h2>
+			<div id="films_list">
+				<div id="start_film" class="sel_film"></div>
+				<% films.forEach(function(film){ %>
+					<div><%=film %></div>
+				<% }); %>
+				<div id="end_film"></div>
+			</div>
+		</div>
+		<div id="menu_2" class="menu">
+			<h2>Images</h2>
+			<div id="images_list">
+				<div id="start_image" class="sel_image"></div>
+				<% images.forEach(function(image){ %>
+					<div><%=image %></div>
+				<% }); %>
+				<div id="end_image"></div>
+			</div>
+		</div>
+		<div id="menu_3" class="menu">
+			<h2>Jeux</h2>
+			<div id="jeux_list">
+				<div id="start_jeu" class="sel_jeu"></div>
+				<% jeux.forEach(function(jeu){ %>
+					<div><%=jeu %></div>
+				<% }); %>
+				<div id="end_jeu"></div>
+			</div>
+		</div>
+	</div>
 	<p>Le dernier message reçu est :</p>
 	<p id="last"></p>
 	<p id="connect"></p>
 
-	<script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script>
-	<script src="http://127.0.0.1:8080/tv.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="tv.js"></script>
+	<script src="jquery-1.11.1.min.js"></script>
 </body>
 </html>

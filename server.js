@@ -4,7 +4,8 @@ var app = express();
 var server = require('http').createServer(app),
 	engine = require('ejs').__express,
 	io = require('socket.io').listen(server),
-	spawn = require('child_process').spawn;
+	spawn = require('child_process').spawn
+	fs = require('fs');
 
 //express modules
 app.use(express.logger('dev'))
@@ -25,7 +26,10 @@ app.get('/remote', function(req, res)
 });
 app.get('/tv', function(req, res)
 {
-	res.render('tv.ejs');
+	var films = fs.readFileSync('listFilm.txt').toString().split("\n");
+	var images = fs.readFileSync('listImages.txt').toString().split("\n");
+	var jeux = fs.readFileSync('listJeux.txt').toString().split("\n");
+	res.render('tv.ejs', {films: films, images:images, jeux: jeux});
 });
 
 //run the server
@@ -63,12 +67,14 @@ io.sockets.on('connection', function(socket)
 			case "lire":
 				spawn('omxplayer', [datas[1]]);
 				break;
+			default:
+				console.log("Try running : " + [datas[0]] + " " + [datas[1]]);
 		}
 	});
 	//remote messages processing
 	socket.on('remote', function(data)
 	{
-		console.log("Data from remote : " + data);
+		//console.log("Data from remote : " + data);
 		switch (data)
 		{
 			//remote connection
