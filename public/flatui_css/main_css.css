@@ -1,0 +1,31 @@
+body
+{
+	background: url('../images/fondecran.jpg') no-repeat;
+	margin:auto;
+}
+
+.menu
+{
+	padding:25px;
+	background-color: #ffffff;
+	opacity: 0.1;
+    	filter: alpha(opacity=5); /* For IE8 and earlier */
+}
+
+.menu_selec
+{
+	padding:25px;
+	background-color: #16a085;
+}
+
+.sel_film{
+	color: #000000;
+}
+
+.sel_image{
+	color: #000000;
+}
+
+.sel_jeu{
+	color: #000000;
+}
