@@ -1,2 +1,2 @@
 #!/bin/bash
-ls Videos/ > listeVideos.txt
+ls Videos/ > listFilm.txt

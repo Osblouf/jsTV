@@ -4,7 +4,7 @@ var app = express();
 var server = require('http').createServer(app),
 	engine = require('ejs').__express,
 	io = require('socket.io').listen(server),
-	spawn = require('child_process').spawn
+	spawn = require('child_process').spawn,
 	fs = require('fs');
 
 //express modules
@@ -64,8 +64,14 @@ io.sockets.on('connection', function(socket)
 					tv_socket.emit('remote_disconnected');
 				}
 				break;
-			case "lire":
-				spawn('omxplayer', [datas[1]]);
+			case "film":
+				console.log("omxplayer Videos/" + [datas[1]]);
+				spawn('omxplayer', ["Videos/" + [datas[1]]]);
+				break;
+			case "jeu":
+				console.log("Run doom...");
+				spawn('Jeux/' + [datas[1]]);
+				console.log("Ok");
 				break;
 			default:
 				console.log("Try running : " + [datas[0]] + " " + [datas[1]]);

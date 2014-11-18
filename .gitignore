@@ -3,3 +3,6 @@
 !/Images/.infos.txt
 /Videos/*
 !/Videos/.infos.txt
+/Jeux/*
+!/Jeux/.infos.txt
+
