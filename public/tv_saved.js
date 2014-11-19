@@ -48,7 +48,6 @@ socket.on('remote', function(data){
 				else{
 					$(sel).prev().addClass("sel_film");}
 				$(sel).removeClass("sel_film");	
-				$(sel).addClass("no_sel");
 			}
 			else if(menu === "menu_2"){
 				var sel = $(".sel_image");
@@ -59,7 +58,6 @@ socket.on('remote', function(data){
 				else{
 					$(sel).prev().addClass("sel_image");}
 				$(sel).removeClass("sel_image");	
-				$(sel).addClass("no_sel");	
 			}
 			else{
 				var sel = $(".sel_jeu");
@@ -70,7 +68,6 @@ socket.on('remote', function(data){
 				else{
 					$(sel).prev().addClass("sel_jeu");}
 				$(sel).removeClass("sel_jeu");	
-				$(sel).addClass("no_sel");	
 			}
 			break;
 		case "down":
@@ -82,7 +79,6 @@ socket.on('remote', function(data){
 				else{
 					$(sel).next().addClass("sel_film");}
 				$(sel).removeClass("sel_film");	
-				$(sel).addClass("no_sel");	
 			}
 			else if(menu === "menu_2"){
 				var sel = $(".sel_image");
@@ -91,7 +87,6 @@ socket.on('remote', function(data){
 				else{
 					$(sel).next().addClass("sel_image");}
 				$(sel).removeClass("sel_image");	
-				$(sel).addClass("no_sel");	
 			}
 			else{
 				var sel = $(".sel_jeu");
@@ -100,7 +95,6 @@ socket.on('remote', function(data){
 				else{
 					$(sel).next().addClass("sel_jeu");}
 				$(sel).removeClass("sel_jeu");	
-				$(sel).addClass("no_sel");	
 			}
 			break;	
 		case "doubleTap":

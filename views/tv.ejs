@@ -13,19 +13,9 @@
 <body>
 	<div class="container">
 	<h1><font color="#ecf0f1" size="13" weight="400"><b>TV CENTER</b></font><h1>
-	<div id="menu_1">
-		<div class="demo-content menu_selec" id="menu_1" padding="20px">
-			<img src="../images/logo_games_alpha.png" alt="logo_music" id="img_3"/>
-				<div id="start_jeu" class="sel_jeu"></div>
-				<% jeux.forEach(function(jeu){ %>
-					<div><%=jeu %></div>
-				<% }); %>
-				<div id="end_jeu"></div>
-		</div>
-
-		<div class="demo-content menu" id="menu_2" padding="20px">
-			<img src="../images/logo_movies_alpha.png" alt="logo_music" id="img_3"/>
-			<div id="films_list">
+		<div class="demo-content menu_selec" id="menu_1">
+			<img src="./images/logo_movies_alpha.png" alt="logo_music" id="img_3"/>
+			<div id="films_list" class="submenu">
 				<div id="start_film" class="sel_film"></div>
 					<% films.forEach(function(film){ %>
 					<div><%=film %></div>
@@ -34,17 +24,29 @@
 			</div>
 		</div>
 
-		<div class="demo-content menu" id="menu_3" padding="20px">
-			<img src="../images/logo_pictures_alpha.png" alt="logo_music" id="img_3"/>
-			<div id="images_list">
+		<div class="demo-content menu" id="menu_2">
+			<img src="./images/logo_pictures_alpha.png" alt="logo_music" id="img_3"/>
+			<div id="images_list" class="submenu">
 				<div id="start_image" class="sel_image"></div>
-				<% images.forEach(function(image){ %>
+					<% images.forEach(function(image){ %>
 					<div><%=image %></div>
-				<% }); %>
+					<% }); %>
 				<div id="end_image"></div>
+			</div>
+		</div>
+
+		<div class="demo-content menu" id="menu_3">
+			<img src="./images/logo_games_alpha.png" alt="logo_music" id="img_3"/>
+			<div id="jeux_list" class="submenu">
+				<div id="start_jeu" class="sel_jeu"></div>
+				<% jeux.forEach(function(jeu){ %>
+					<div><%=jeu %></div>
+				<% }); %>
+				<div id="end_jeu"></div>
 			</div>
 		</div>		
     	</div>
+
 	<p>Le dernier message reçu est :</p>
 	<p id="last"></p>
 	<p id="connect"></p>

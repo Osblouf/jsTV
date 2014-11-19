@@ -2,30 +2,58 @@ body
 {
 	background: url('../images/fondecran.jpg') no-repeat;
 	margin:auto;
+	
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+img
+{
+	height:51;
+	width:70;
+}
+
+.teste
+{
+	display: inline;
 }
 
 .menu
 {
-	padding:25px;
-	background-color: #ffffff;
-	opacity: 0.1;
-    	filter: alpha(opacity=5); /* For IE8 and earlier */
+	/*padding-bottom: 25px;*/
+	background-color: #f1c40f;
+	opacity: 0.8;
 }
 
 .menu_selec
 {
-	padding:25px;
+	/*padding-bottom: 25px;*/
 	background-color: #16a085;
+}
+
+.submenu
+{
+	background-color: #1abc9c;
+}
+
+.no_sel{
+	color: #ffffff
+	background-color: rgba(0,0,0,0.3);
 }
 
 .sel_film{
 	color: #000000;
+	background-color: #34495e;
 }
 
 .sel_image{
 	color: #000000;
+	background-color: #34495e;
 }
 
 .sel_jeu{
 	color: #000000;
+	background-color: #34495e;
 }
