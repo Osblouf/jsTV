@@ -13,6 +13,6 @@ Run it :
 
 	npm install
 
-	nodejs server.js
+	./start.sh
 
 That's all folks !
