@@ -1,4 +1,4 @@
-body
+/*body
 {
 	background: url('../images/fondecran.jpg') no-repeat;
 	margin:auto;
@@ -8,17 +8,17 @@ body
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
-
-img
+*/
+/*img
 {
 	height:51;
 	width:70;
-}
+}*/
 
-.teste
+/*.teste
 {
 	display: inline;
-}
+}*/
 
 .menu
 {
@@ -33,15 +33,13 @@ img
 	background-color: #16a085;
 }
 
-.submenu
-{
+/*.submenu
 	background-color: #1abc9c;
-}
-
+}*/
+/*
 .no_sel{
-	color: #ffffff
-	background-color: rgba(0,0,0,0.3);
-}
+	color: #	background-color: rgba(0,0,0,0.3);
+}*/
 
 .sel_film{
 	color: #000000;
@@ -56,4 +54,12 @@ img
 .sel_jeu{
 	color: #000000;
 	background-color: #34495e;
+}
+
+.panel{
+	padding: 10px;
+}
+.footer{
+	position: absolute;
+	bottom: 0;
 }

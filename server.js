@@ -37,7 +37,8 @@ server.listen(app.get('port'), function()
 {
 	console.log('Express server started on port ' + app.get('port'));
 	console.log("Start the screen...");
-	spawn('chromium-browser', ['--kiosk', 'http://127.0.0.1:8080/tv']);
+	spawn('chromium-browser', ['--kiosk', 'http://localhost:8080/tv']);
+	//spawn('chromium-browser', ['http://localhost:8080/tv']);
 });
 
 //io socket events
@@ -101,7 +102,7 @@ io.sockets.on('connection', function(socket)
 			default:
 				if(tv_socket != undefined)
 				{
-					console.log("Send \"" + data + "\" to the screen...");
+					//console.log("Send \"" + data + "\" to the screen...");
 					tv_socket.emit('remote', data);
 				}
 				break;

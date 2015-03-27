@@ -1,4 +1,4 @@
-var socket = io.connect('http://192.168.1.92:8080');
+var socket = io.connect('http://192.168.1.24:8080');
 
 //at connection
 socket.on('connect', function(data){

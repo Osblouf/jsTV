@@ -12,33 +12,33 @@ socket.on('remote', function(data){
 			document.getElementById("connect").textContent="connecté.";
 			break;
 		case "left":
-			var menu = $(".menu_selec");
+			var menu = $(".panel-info");
 			if($(menu).attr("id") === "menu_1"){
-				$(menu).removeClass("menu_selec");
-				$(menu).addClass("menu");
-				$("#menu_3").removeClass("menu");
-				$("#menu_3").addClass("menu_selec");}
+				$(menu).removeClass("panel-info");
+				$(menu).addClass("panel-default");
+				$("#menu_3").removeClass("panel-default");
+				$("#menu_3").addClass("panel-info");}
 			else{
-				$(menu).prev().removeClass("menu");
-				$(menu).prev().addClass("menu_selec");
-				$(menu).removeClass("menu_selec");
-				$(menu).addClass("menu");}
+				$(menu).prev().removeClass("panel-default");
+				$(menu).prev().addClass("panel-info");
+				$(menu).removeClass("panel-info");
+				$(menu).addClass("panel-default");}
 			break;
 		case "right":
-			var menu = $(".menu_selec");
+			var menu = $(".panel-info");
 			if($(menu).attr("id") === "menu_3"){
-				$(menu).removeClass("menu_selec");
-				$(menu).addClass("menu");
-				$("#menu_1").removeClass("menu");
-				$("#menu_1").addClass("menu_selec");}
+				$(menu).removeClass("panel-info");
+				$(menu).addClass("panel-default");
+				$("#menu_1").removeClass("panel-default");
+				$("#menu_1").addClass("panel-info");}
 			else{
-				$(menu).next().removeClass("menu");
-				$(menu).next().addClass("menu_selec");
-				$(menu).removeClass("menu_selec");
-				$(menu).addClass("menu");}
+				$(menu).next().removeClass("panel-default");
+				$(menu).next().addClass("panel-info");
+				$(menu).removeClass("panel-info");
+				$(menu).addClass("panel-default");}
 			break;
 		case "up":
-			var menu = $(".menu_selec").attr("id")
+			var menu = $(".panel-info").attr("id")
 			if(menu === "menu_1"){
 				var sel = $(".sel_film");
 				if($(sel).attr("id") === "start_film"){
@@ -74,7 +74,7 @@ socket.on('remote', function(data){
 			}
 			break;
 		case "down":
-			var menu = $(".menu_selec").attr("id");
+			var menu = $(".panel-info").attr("id");
 			if(menu === "menu_1"){
 				var sel = $(".sel_film");
 				if($(sel).next().attr("id") === "end_film"){
@@ -104,7 +104,7 @@ socket.on('remote', function(data){
 			}
 			break;	
 		case "doubleTap":
-			var menu = $(".menu_selec").attr("id");
+			var menu = $(".panel-info").attr("id");
 			if(menu === "menu_1"){
 				socket.emit('screen', 'film ' + $(".sel_film").text());
 			}

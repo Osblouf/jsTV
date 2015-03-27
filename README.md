@@ -7,7 +7,7 @@ Run it :
 
 	clone https://github.com/Osblouf/jsTV
 
-	sudo apt-get install nodejs npm
+	sudo apt-get install nodejs npm chromium-browser
 
 	cd jsTV
 

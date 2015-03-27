@@ -1,58 +1,74 @@
-<!Doctype>
-<html>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>TV</title>
-
-	<link href="flatui_css/bootstrap.min.css" rel="stylesheet">
-	<link href="flatui_cass/flat-ui.css" rel="stylesheet">
+	<link href="bootstrap.min.css" rel="stylesheet">
 	<link href="flatui_css/main_css.css" rel="stylesheet">
-	<link href="flatui_css/demo.css" rel="stylesheet">
-
 </head>
 <body>
-	<div class="container">
-	<h1><font color="#ecf0f1" size="13" weight="400"><b>TV CENTER</b></font><h1>
-		<div class="demo-content menu_selec" id="menu_1">
-			<img src="./images/logo_movies_alpha.png" alt="logo_music" id="img_3"/>
-			<div id="films_list" class="submenu">
-				<div id="start_film" class="sel_film"></div>
+	<div class="container-fluid">
+	<h1>TV CENTER<small> entertainment center</small><h1>
+	  <div class="row">
+		<div class="panel panel-info col-md-4" id="menu_1">
+		    <div class="panel-heading">
+			<h3 class="panel-title"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Films</h3>
+		    </div>
+		    <div class="panel-body">
+			<ul id="films_list" class="submenu">
+				<li id="start_film" class="hidden sel_film"></li>
 					<% films.forEach(function(film){ %>
-					<div><%=film %></div>
+					<li class="list-group-item"><%=film %></li>
 					<% }); %>
-				<div id="end_film"></div>
-			</div>
+				<li class="hidden" id="end_film"></li>
+			</ul>
+		    </div>
 		</div>
-
-		<div class="demo-content menu" id="menu_2">
-			<img src="./images/logo_pictures_alpha.png" alt="logo_music" id="img_3"/>
-			<div id="images_list" class="submenu">
-				<div id="start_image" class="sel_image"></div>
+		<div class="panel panel-default col-md-4" id="menu_2">
+		    <div class="panel-heading">
+			<h3 class="panel-title"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Photos</h3>
+		    </div>
+		    <div class="panel-body">
+			<ul id="images_list" class="submenu">
+				<li id="start_image" class="hidden sel_image"></li>
 					<% images.forEach(function(image){ %>
-					<div><%=image %></div>
+					<li class="list-group-item"><%=image %></li>
 					<% }); %>
-				<div id="end_image"></div>
-			</div>
+				<li id="end_image" class="hidden"></li>
+			</ul>
+		    </div>
 		</div>
-
-		<div class="demo-content menu" id="menu_3">
-			<img src="./images/logo_games_alpha.png" alt="logo_music" id="img_3"/>
-			<div id="jeux_list" class="submenu">
-				<div id="start_jeu" class="sel_jeu"></div>
+		<div class="panel panel-default col-md-4" id="menu_3">
+		    <div class="panel-heading">
+			<h3 class="panel-title"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Musiques</h3>
+		    </div>
+		    <div class="panel-body">
+			<ul id="jeux_list" class="submenu">
+				<li id="start_jeu" class="sel_jeu hidden"></li>
 				<% jeux.forEach(function(jeu){ %>
-					<div><%=jeu %></div>
+					<li class="list-group-item"><%=jeu %></li>
 				<% }); %>
-				<div id="end_jeu"></div>
-			</div>
-		</div>		
+				<li id="end_jeu" class="hidden"></li>
+			</ul>
+		    </div>
+		</div>	
+	  </div>
     	</div>
 
-	<p>Le dernier message reçu est :</p>
-	<p id="last"></p>
-	<p id="connect"></p>
+	<footer class="footer">
+	  <div class="container-fluid">
+	    <p class="text-muted">Le dernier message reçu est :</p>
+	    <p class="text-muted" id="last"></p>
+	    <p class="text-muted" id="connect"></p>
+	  </div>
+	</footer>
 
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="bootstrap.min.js"></script>
 	<script src="socket.io/socket.io.js"></script>
 	<script src="tv.js"></script>
-	<script src="jquery-1.11.1.min.js"></script>
 </body>
 </html>

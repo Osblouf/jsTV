@@ -1,6 +1,1 @@
-cadastre3.pgm
-house.pgm
-HumanRights12-72.pgm
-ieee_1024.pgm
-number72_512.pgm
-sel4.pgm
+remote.png
