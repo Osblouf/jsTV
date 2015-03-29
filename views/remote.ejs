@@ -1,17 +1,88 @@
-<!Doctype>
-<html>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="user-scalable=no,width=device-width" />
-	<link rel="stylesheet" href="/remote.css">
-	<title>Remote</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,maximum-scale=1"/>
+	<!-- <link rel="stylesheet" href="/remote.css"> -->
+	<title>jsTV Remote</title>
+	<link href="/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<h1>jsTV remote</h1>
-	<img src="/images/remote.png">
-	<input type="text" id="command"><button onClick="send_text()">Send</button>
-	<p id="connect"></p>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	        <span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">jsTV</a>
+	    </div>
+	    <div id="navbar" class="navbar-collapse collapse">
+	      <ul class="nav navbar-nav">
+		<li><a data-toggle="modal" data-target="#commandModal" href="#">Command</a></li>
+	        <li><a data-toggle="modal" data-target="#aboutModal" href="#">About</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
 
+	<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+		<h4 class="modal-title" id="aboutModelLabel">About</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>This is the remote controller for the jsTV software. Enjoy browsing TV's menus by swapping your finger on the circle in the middle of the page.</p>
+		<p>You can also send special command via the command menu.</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+		<h4 class="modal-title" id="commandModelLabel">Special command</h4>
+	      </div>
+	      <div class="modal-body">
+		  <div class="form-group">
+		    <label class="sr-only" for="commandInput">Command</label>
+		    <input type="text" class="form-control" id="commandInput" placeholder="command">
+		  </div>
+		  <button id="commandButton" type="submit" class="btn btn-default">Send</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<div class="container">
+	  <div class="row">
+	    <div class="col-xs-12">
+	      <img src="/images/remote.png" class="img-responsive">
+	    </div>
+	  </div>
+	  <!-- <input type="text" id="command"><button onClick="send_text()">Send</button> -->
+	</div>
+
+	<footer class="footer" style="position: fixed; bottom: 0; width: 100%; background-color: #F5F5F5;">
+	  <div class="container-fluid">
+	    <p id="connect" class="text-muted">...</p>
+	  </div>
+	</footer>
+
+	<script src="/jquery-1.11.1.min.js"></script>
+	<script src="/bootstrap.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="/quo.js"></script>
 	<script src="/remote.js"></script>

@@ -58,6 +58,7 @@ io.sockets.on('connection', function(socket)
 				//if the remote isn't connected, prevent it that the screen is ready
 				if(remote_socket != undefined)
 				{
+				        console.log("Send ok to remote");
 					remote_socket.emit('tv', 'ok');
 				}
 				else
@@ -96,6 +97,8 @@ io.sockets.on('connection', function(socket)
 				}
 				else
 				{
+				        console.log("Send ok to remote");
+					remote_socket.emit('tv', 'ok');
 					tv_socket.emit('remote', 'reconnect');
 				}
 				break;

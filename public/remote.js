@@ -2,16 +2,19 @@ var socket = io.connect('http://192.168.1.24:8080');
 
 //at connection
 socket.on('connect', function(data){
-	socket.emit('remote', 'ready');});
+	socket.emit('remote', 'ready');
+	$("#connect").text("connecting...");});
 
 //tv connected
 socket.on('tv', function(data){
 	if(data == 'ok'){
-		document.getElementById("connect").textContent="connected";}});
+		//$("#connect").textContent="connected";}});
+		$("#connect").text("connected");}});
 
 //if tv disconnected
 socket.on('screen_disconnected', function(){
-	document.getElementById("connect").textContent="disconnected";});
+	$("#connect").text("disconnected");});
+	//$("#connect").textContent="disconnected";});
 
 //process swipe events
 $$('img').swipeLeft(function(){
@@ -26,6 +29,6 @@ $$('img').doubleTap(function(){
 	socket.emit('remote', 'doubleTap');});
 
 //Send text
-function send_text(){
-	text_field = document.getElementById("command").value;
-	socket.emit('remote', text_field);}
+$('#commandButton').on('click', function (){
+	text_field = $("#commandInput").val();
+	socket.emit('remote', text_field);});
