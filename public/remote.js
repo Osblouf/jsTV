@@ -1,4 +1,5 @@
-var socket = io.connect('http://192.168.1.24:8080');
+var ip = location.host;
+var socket = io.connect('http://' + ip);
 
 //at connection
 socket.on('connect', function(data){
@@ -31,4 +32,4 @@ $$('img').doubleTap(function(){
 //Send text
 $('#commandButton').on('click', function (){
 	text_field = $("#commandInput").val();
-	socket.emit('remote', text_field);});
+	socket.emit('remote', 'C_' + text_field);});

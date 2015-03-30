@@ -13,7 +13,8 @@
 	<div class="container-fluid">
 	<h1>TV CENTER<small> entertainment center</small><h1>
 	  <div class="row">
-		<div class="panel panel-info col-md-4" id="menu_1">
+		<div class="col-md-4" id="menu_1">
+		<div class="panel panel-info">
 		    <div class="panel-heading">
 			<h3 class="panel-title"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Films</h3>
 		    </div>
@@ -21,13 +22,15 @@
 			<ul id="films_list" class="submenu">
 				<li id="start_film" class="hidden sel_film"></li>
 					<% films.forEach(function(film){ %>
-					<li class="list-group-item"><%=film %></li>
+					<li class="list-group-item"><h5><%=film %><h5></li>
 					<% }); %>
 				<li class="hidden" id="end_film"></li>
 			</ul>
 		    </div>
 		</div>
-		<div class="panel panel-default col-md-4" id="menu_2">
+		</div>
+		<div class="col-md-4" id="menu_2">
+		<div class="panel panel-default">
 		    <div class="panel-heading">
 			<h3 class="panel-title"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Photos</h3>
 		    </div>
@@ -35,13 +38,15 @@
 			<ul id="images_list" class="submenu">
 				<li id="start_image" class="hidden sel_image"></li>
 					<% images.forEach(function(image){ %>
-					<li class="list-group-item"><%=image %></li>
+					<li class="list-group-item"><h5><%=image %></h5></li>
 					<% }); %>
 				<li id="end_image" class="hidden"></li>
 			</ul>
 		    </div>
 		</div>
-		<div class="panel panel-default col-md-4" id="menu_3">
+		</div>
+		<div class="col-md-4" id="menu_3">
+		<div class="panel panel-default">
 		    <div class="panel-heading">
 			<h3 class="panel-title"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Musiques</h3>
 		    </div>
@@ -49,11 +54,12 @@
 			<ul id="jeux_list" class="submenu">
 				<li id="start_jeu" class="sel_jeu hidden"></li>
 				<% jeux.forEach(function(jeu){ %>
-					<li class="list-group-item"><%=jeu %></li>
+					<li class="list-group-item"><h5><%=jeu %></h5></li>
 				<% }); %>
 				<li id="end_jeu" class="hidden"></li>
 			</ul>
 		    </div>
+		</div>
 		</div>	
 	  </div>
     	</div>

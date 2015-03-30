@@ -19,19 +19,17 @@
 {
 	display: inline;
 }*/
-
+/*
 .menu
 {
-	/*padding-bottom: 25px;*/
 	background-color: #f1c40f;
 	opacity: 0.8;
 }
 
 .menu_selec
 {
-	/*padding-bottom: 25px;*/
 	background-color: #16a085;
-}
+}*/
 
 /*.submenu
 	background-color: #1abc9c;
@@ -42,23 +40,20 @@
 }*/
 
 .sel_film{
-	color: #000000;
-	background-color: #34495e;
+	background-color: #E5E5E5;
 }
 
 .sel_image{
-	color: #000000;
-	background-color: #34495e;
+	background-color: #E5E5E5;
 }
 
 .sel_jeu{
-	color: #000000;
-	background-color: #34495e;
+	background-color: #E5E5E5;
 }
-
+/*
 .panel{
 	padding: 10px;
-}
+}*/
 .footer{
 	position: absolute;
 	bottom: 0;

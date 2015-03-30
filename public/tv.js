@@ -12,33 +12,33 @@ socket.on('remote', function(data){
 			document.getElementById("connect").textContent="connecté.";
 			break;
 		case "left":
-			var menu = $(".panel-info");
+			var menu = $(".panel-info").parent();
 			if($(menu).attr("id") === "menu_1"){
-				$(menu).removeClass("panel-info");
-				$(menu).addClass("panel-default");
-				$("#menu_3").removeClass("panel-default");
-				$("#menu_3").addClass("panel-info");}
+				$(menu).find('.panel').removeClass("panel-info");
+				$(menu).find('.panel').addClass("panel-default");
+				$("#menu_3").find('.panel').removeClass("panel-default");
+				$("#menu_3").find('.panel').addClass("panel-info");}
 			else{
-				$(menu).prev().removeClass("panel-default");
-				$(menu).prev().addClass("panel-info");
-				$(menu).removeClass("panel-info");
-				$(menu).addClass("panel-default");}
+				$(menu).prev().find('.panel').removeClass("panel-default");
+				$(menu).prev().find('.panel').addClass("panel-info");
+				$(menu).find('.panel').removeClass("panel-info");
+				$(menu).find('.panel').addClass("panel-default");}
 			break;
 		case "right":
-			var menu = $(".panel-info");
+			var menu = $(".panel-info").parent();
 			if($(menu).attr("id") === "menu_3"){
-				$(menu).removeClass("panel-info");
-				$(menu).addClass("panel-default");
-				$("#menu_1").removeClass("panel-default");
-				$("#menu_1").addClass("panel-info");}
+				$(menu).find('.panel').removeClass("panel-info");
+				$(menu).find('.panel').addClass("panel-default");
+				$("#menu_1").find('.panel').removeClass("panel-default");
+				$("#menu_1").find('.panel').addClass("panel-info");}
 			else{
-				$(menu).next().removeClass("panel-default");
-				$(menu).next().addClass("panel-info");
-				$(menu).removeClass("panel-info");
-				$(menu).addClass("panel-default");}
+				$(menu).next().find('.panel').removeClass("panel-default");
+				$(menu).next().find('.panel').addClass("panel-info");
+				$(menu).find('.panel').removeClass("panel-info");
+				$(menu).find('.panel').addClass("panel-default");}
 			break;
 		case "up":
-			var menu = $(".panel-info").attr("id")
+			var menu = $(".panel-info").parent().attr("id")
 			if(menu === "menu_1"){
 				var sel = $(".sel_film");
 				if($(sel).attr("id") === "start_film"){
@@ -47,8 +47,7 @@ socket.on('remote', function(data){
 					$("#end_film").prev().addClass("sel_film");}
 				else{
 					$(sel).prev().addClass("sel_film");}
-				$(sel).removeClass("sel_film");	
-				$(sel).addClass("no_sel");
+				$(sel).removeClass("sel_film");
 			}
 			else if(menu === "menu_2"){
 				var sel = $(".sel_image");
@@ -59,7 +58,6 @@ socket.on('remote', function(data){
 				else{
 					$(sel).prev().addClass("sel_image");}
 				$(sel).removeClass("sel_image");	
-				$(sel).addClass("no_sel");	
 			}
 			else{
 				var sel = $(".sel_jeu");
@@ -70,11 +68,10 @@ socket.on('remote', function(data){
 				else{
 					$(sel).prev().addClass("sel_jeu");}
 				$(sel).removeClass("sel_jeu");	
-				$(sel).addClass("no_sel");	
 			}
 			break;
 		case "down":
-			var menu = $(".panel-info").attr("id");
+			var menu = $(".panel-info").parent().attr("id");
 			if(menu === "menu_1"){
 				var sel = $(".sel_film");
 				if($(sel).next().attr("id") === "end_film"){
@@ -82,7 +79,6 @@ socket.on('remote', function(data){
 				else{
 					$(sel).next().addClass("sel_film");}
 				$(sel).removeClass("sel_film");	
-				$(sel).addClass("no_sel");	
 			}
 			else if(menu === "menu_2"){
 				var sel = $(".sel_image");
@@ -91,7 +87,6 @@ socket.on('remote', function(data){
 				else{
 					$(sel).next().addClass("sel_image");}
 				$(sel).removeClass("sel_image");	
-				$(sel).addClass("no_sel");	
 			}
 			else{
 				var sel = $(".sel_jeu");
@@ -100,11 +95,10 @@ socket.on('remote', function(data){
 				else{
 					$(sel).next().addClass("sel_jeu");}
 				$(sel).removeClass("sel_jeu");	
-				$(sel).addClass("no_sel");	
 			}
 			break;	
 		case "doubleTap":
-			var menu = $(".panel-info").attr("id");
+			var menu = $(".panel-info").parent().attr("id");
 			if(menu === "menu_1"){
 				socket.emit('screen', 'film ' + $(".sel_film").text());
 			}
